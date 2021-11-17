@@ -16,13 +16,13 @@ class TestCog(commands.Cog):
 
 
 class ScheduledHi(commands.Cog):
-    def __init__(self, bot, message):
+    def __init__(self, bot, user):
         self.printer.start()
-        self.message = message
+        self.user = user
         self.bot = bot
 
 
     @tasks.loop(hours=6)
     async def printer(self):
-        self.message.channel.send('Hello, anything new?')
+        await self.user.send('Hello, anything new?')
 

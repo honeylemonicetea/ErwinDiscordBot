@@ -20,7 +20,14 @@ from test_stuff.tasks_test import ScheduledHi
 
 # END DELETE THIS LATER
 
+# TEST
+user = client.get_user(910630904525910036)
 
+scheduled = ScheduledHi(bot=client, user=user)
+scheduled.printer()
+
+
+# TEST FEATURE END
 
 
 
@@ -34,10 +41,7 @@ async def on_message(message):
     msg = message.content.lower()
     # print(msg)
 
-    # TEST FEATURE
-    scheduled = ScheduledHi(bot=client, message=message)
-    await scheduled.printer()
-    # TEST FEATURE END
+
 
 
     if message.author == client.user:
