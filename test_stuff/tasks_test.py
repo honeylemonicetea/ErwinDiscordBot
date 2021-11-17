@@ -13,3 +13,16 @@ class TestCog(commands.Cog):
     async def printer(self):
         print(self.index)
         self.index += 1
+
+
+class ScheduledHi(commands.Cog):
+    def __init__(self, bot, message):
+        self.printer.start()
+        self.message = message
+        self.bot = bot
+
+
+    @tasks.loop(hours=6)
+    async def printer(self):
+        self.message.channel.send('Hello, anything new?')
+

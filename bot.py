@@ -12,12 +12,10 @@ client = discord.Client()
 
 # DELETE THIS LATER
 #
-from test_stuff.tasks_test import TestCog
+from test_stuff.tasks_test import ScheduledHi
 
 
 # TESTING COGS / tasks
-scheduled = TestCog(bot=client)
-scheduled.printer()
 
 
 # END DELETE THIS LATER
@@ -35,6 +33,12 @@ async def on_ready():
 async def on_message(message):
     msg = message.content.lower()
     # print(msg)
+
+    # TEST FEATURE
+    scheduled = ScheduledHi(bot=client, message=message)
+    await scheduled.printer()
+    # TEST FEATURE END
+
 
     if message.author == client.user:
         return
