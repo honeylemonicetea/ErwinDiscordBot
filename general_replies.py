@@ -39,6 +39,14 @@ reply_options = {
         'Not having you here is driving me crazy.',
 
     ],
+    'howRU':[
+        'Pretty good',
+        'Not too bad',
+        'Same old, same old',
+        'Thanks for asking. Doing just great',
+        'I think I\'m okay. You?'
+    ],
+
     'soothing': [
 
     ]
@@ -58,6 +66,11 @@ def get_bot_reaction(message):
         replies = reply_options.get('toMiss')
         reply = random.choice(replies)
         return reply
+    elif 'how are you' in message or 'how is it going' in message or 'what\'s up' in message:
+        replies = reply_options.get('howRU')
+        reply = random.choice(replies)
+        return reply
+
     elif message == "我爱你":
         return "我也爱你😘"
 
