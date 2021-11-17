@@ -6,16 +6,24 @@ from general_replies import get_bot_reaction
 import random
 import asyncio
 
+
+# THE BOT
+client = discord.Client()
+
 # DELETE THIS LATER
-from testing_ftrs import get_info
+#
+from test_stuff.tasks_test import TestCog
+
+
+# TESTING COGS / tasks
+scheduled = TestCog(bot=client)
+scheduled.printer()
+
 
 # END DELETE THIS LATER
 
 
-client = discord.Client()
-print('TEST FEATURES START')
-get_info(client)
-print('TEST FEATURES END')
+
 
 
 @client.event
