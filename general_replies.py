@@ -79,5 +79,7 @@ def get_bot_reaction(message):
         return 'I never kissed a mouth that tastes like yours'
     elif message == 'i feel so extraordinary':
         return 'Something\'s got a hold on me\n I get this feeling\nI\'m in motion\nA certain sense of liberty\nI don\'t care \'cause I\'m not there\nAnd I don\'t care if I\'m here tomorrow\nAgain and again I\'ve taken too much\nOf the things that cost you too much'
+    elif message == 'i used to think that the day would never come':
+        return 'I\'d see the light in the shade of the morning Sun\nMy morning sun is the drug that brings me near\nTo the childhood I lost, replaced by fear\nI used to think that the day would never come\nThat my life would depend on the morning Sun'
     else:
         return 'Please, be patient. Doing the best I can to understand what you want. I\'m not perfect yet'
