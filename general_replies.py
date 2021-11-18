@@ -46,6 +46,19 @@ reply_options = {
         'Thanks for asking. Doing just great',
         'I think I\'m okay. You?'
     ],
+    'strangerville':[
+        'ĴØIŇ UŞ',
+        'ĆØŇŞUΜ€ ŦĦ€ FŘUIŦ ØF ŦĦ€ ΜØŦĦ€Ř ΔŇĐ KŇØŴ P€ΔĆ€',
+        'ŦĦ€ ΜØŦĦ€Ř ҜŇØŴŞ ΔŁŁ ĐØ ŇØŦ Ř€ŞIŞŦ Ħ€Ř',
+        'ØUŘ €¥€Ş ΔŘ€ ØƤ€Ň',
+        'ΔĆĆ€PŦ Ħ€Ř ǤI₣ŦŞ ΔŇĐ ΔŁŁ ŴIŁŁ β€ Ŵ€ŁŁ',
+        'ŦĦ€ ΜØŦĦ€Ř ĆΔŁŁŞ ΔŇĐ I ΜUŞŦ Ř€ŞPØŇĐ',
+        'ĴØIŇ UŞ IŇ ŦĦ€ ĆŘΔŦ€Ř',
+        'ŦĦ€ ΔŘβØŘ€ΔŁ ΜIŇĐ ĐŘ€ΔΜŞ ŦĦŘØUGĦ ØUŘ FŁ€ŞĦ¥ €¥€Ş',
+        'ŁØØK ŦØ ŦĦ€ ŞK¥ IŦ Ŵ€ŁĆØΜ€Ş UŞ ΔŁŁ',
+        'β€ΔUŦ¥β€ΔUŦ¥β€ΔUŦ¥β€ΔUŦ¥β€ŁŁΔβ€ΔUŦ¥β€ΔUŦ¥β€ΔUŦ¥β€ΔUŦ¥',
+        'Ħ€Ř Ň€ŞT IŞ ĆŁØUĐ€Đ IŇ β€ΔUŦ¥ Ŵ€ ĐØ ŇØT Đ€Ş€ŘV€ Ħ€Ř'
+    ],
 
     'soothing': [
 
@@ -70,7 +83,10 @@ def get_bot_reaction(message):
         replies = reply_options.get('howRU')
         reply = random.choice(replies)
         return reply
-
+    elif 'acting strange' in message or 'acting weird' in message or 'strangerville' in message:
+        replies = reply_options.get('strangerville')
+        reply = random.choice(replies)
+        return reply
     elif message == "我爱你":
         return "我也爱你😘"
 
