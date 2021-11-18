@@ -77,6 +77,8 @@ def get_bot_reaction(message):
     # SOME SPECIAL REpliES SECTION
     elif message == 'i took an arrow to the heart':
         return 'I never kissed a mouth that tastes like yours'
+	elif message == 'i feel so extraordinary':
+		return 'Something\'s got a hold on me\n I get this feeling\nI\'m in motion\nA certain sense of liberty\nI don\'t care \'cause I\'m not there\nAnd I don\'t care if I\'m here tomorrow\nAgain and again I\'ve taken too much\nOf the things that cost you too much'
 
     else:
         return 'Please, be patient. Doing the best I can to understand what you want. I\'m not perfect yet'

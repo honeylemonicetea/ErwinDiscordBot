@@ -6,26 +6,31 @@ from general_replies import get_bot_reaction
 import random
 import asyncio
 
+# TESTING COGS / tasks
+# INTENTS
+intents = discord.Intents.default()
 
+
+# END DELETE THIS LATER
+
+# TEST
 # THE BOT
-client = discord.Client()
+client = discord.Client(intents=intents)
 
 # DELETE THIS LATER
 #
 from test_stuff.tasks_test import ScheduledHi
 
 
-# TESTING COGS / tasks
 
 
-# END DELETE THIS LATER
 
-# TEST
-user = client.get_user(910630904525910036)
+user = client.get_user(660763476943306762)
+print('THIS IS THE USER')
+print(user)
 
-scheduled = ScheduledHi(bot=client, user=user)
-scheduled.printer()
-
+# scheduled = ScheduledHi(bot=client, user=user)
+# scheduled.printer()
 
 # TEST FEATURE END
 
