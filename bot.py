@@ -5,20 +5,28 @@ from api_query import get_stories
 from general_replies import get_bot_reaction
 import random
 import asyncio
+from test_stuff.tasks_test import ScheduledHi
 
+intents = discord.Intents.all()
 
-client = discord.Client()
+client = discord.Client(intents=intents)
+BELLA_ID = 660763476943306762
 
-
-# user = client.get_user(660763476943306762)
-
+# user = client.fetch_user(660763476943306762)
+# print(user)
+# user.send()
 
 # TEST FEATURE END
 
 
 @client.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+	print('We have logged in as {0.user}'.format(client))
+	user = client.get_user(BELLA_ID)
+	print(user)
+	if user != None:
+		task = ScheduledHi(bot=client, user=user)
+		await task.printer()
 
 
 @client.event
@@ -59,5 +67,4 @@ async def on_message(message):
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
-
-bot.run(os.getenv('TOKEN'))  #TEST FEATURE
+  #TEST FEATURE
