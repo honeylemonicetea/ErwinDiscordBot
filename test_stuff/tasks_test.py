@@ -22,7 +22,7 @@ class ScheduledHi(commands.Cog):
         self.bot = bot
 
 
-    @tasks.loop(hours=6)
+    @tasks.loop(hours=1)
     async def printer(self):
         await self.user.send('Hello, anything new?')
 

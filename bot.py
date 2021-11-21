@@ -12,6 +12,7 @@ intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 BELLA_ID = 660763476943306762
 
+
 # user = client.fetch_user(660763476943306762)
 # print(user)
 # user.send()
@@ -21,12 +22,12 @@ BELLA_ID = 660763476943306762
 
 @client.event
 async def on_ready():
-	print('We have logged in as {0.user}'.format(client))
-	user = client.get_user(BELLA_ID)
-	print(user)
-	if user != None:
-		task = ScheduledHi(bot=client, user=user)
-		await task.printer()
+    print('We have logged in as {0.user}'.format(client))
+    user = client.get_user(BELLA_ID)
+    print(user)
+    if user != None:
+        task = ScheduledHi(bot=client, user=user)
+        await task.printer()
 
 
 @client.event
@@ -67,4 +68,4 @@ async def on_message(message):
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
-  #TEST FEATURE
+# TEST FEATURE
