@@ -6,34 +6,14 @@ from general_replies import get_bot_reaction
 import random
 import asyncio
 
-# TESTING COGS / tasks
-# INTENTS
-intents = discord.Intents.default()
+
+client = discord.Client()
 
 
-# END DELETE THIS LATER
+# user = client.get_user(660763476943306762)
 
-# TEST
-# THE BOT
-client = discord.Client(intents=intents)
-
-# DELETE THIS LATER
-#
-from test_stuff.tasks_test import ScheduledHi
-
-
-
-
-
-user = client.get_user(660763476943306762)
-print('THIS IS THE USER')
-print(user)
-
-# scheduled = ScheduledHi(bot=client, user=user)
-# scheduled.printer()
 
 # TEST FEATURE END
-
 
 
 @client.event
@@ -46,9 +26,6 @@ async def on_message(message):
     msg = message.content.lower()
     # print(msg)
 
-
-
-
     if message.author == client.user:
         return
     if msg == 'hey baby' or msg == 'hi baby' or msg == 'hello honey' or msg == 'hey honey' or msg == 'hi honey':
@@ -56,7 +33,8 @@ async def on_message(message):
     elif "erwin" in msg and ("hi" in msg or "hey" in msg or "hello" in msg):
         user_name = str(message.author).split()[0]
         await message.channel.send(f'Hi {user_name}')
-    elif msg.startswith('hello') or msg.startswith('hey') or msg.startswith('hi'):
+    elif msg.startswith('hello') or msg.startswith('hey') or msg.startswith(
+            'hi'):
         await message.channel.send('Greetings stranger!')
 
     # STORY TELLING FEATURE
@@ -81,3 +59,5 @@ async def on_message(message):
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
+
+bot.run(os.getenv('TOKEN'))  #TEST FEATURE
