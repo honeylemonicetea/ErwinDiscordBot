@@ -10,6 +10,7 @@ discord = "^1.7.3"
 Flask = "^2.0.2"
 bs4 = "^0.0.1"
 rauth = "^0.7.3"
+lxml = "^4.6.4"
 
 [tool.poetry.dev-dependencies]
 

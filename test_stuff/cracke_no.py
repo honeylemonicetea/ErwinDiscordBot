@@ -15,8 +15,10 @@ def far_cry():
         uncracked = soup.find(class_='MRH-njmSb5ZTkfb1o4dqv')
         if uncracked != None:
             uncracked_res = uncracked.text
-            if 'Far Cry 6' in uncracked_res:
-                return 'Far Cry 6 is still among the uncracked games'
+			if 'Far Cry 6' in uncracked_res:
+				return 'Far Cry 6 is still among the uncracked games'
+			else:
+				return 'Far Cry 6 is probably cracked! Go check it out'
         else:
             print('couldn\'t find it sorry')
 
