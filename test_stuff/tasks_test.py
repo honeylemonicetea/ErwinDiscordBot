@@ -1,5 +1,6 @@
 from discord.ext import tasks, commands
 from .cracke_no import get_dollar, far_cry
+from .test1 import testing_wakeup
 
 class TestCog(commands.Cog):
     def __init__(self, bot):
@@ -27,6 +28,9 @@ class ScheduledHi(commands.Cog):
     async def printer(self):
         dollar = get_dollar()
         far_c6 = far_cry()
-
+        wakeup  = testing_wakeup()
         await self.user.send(f'Hello, anything new?\n Dollar costs {dollar} and  {far_c6}')
+        if wakeup != None:
+            await self.user.send(f'{wakeup}')
+
 

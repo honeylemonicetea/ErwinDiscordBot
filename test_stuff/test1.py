@@ -1,26 +1,31 @@
-def get_lyrics():
-    pass
-
-
-# import requests
+# import aiohttp
+# import asyncio
 #
-# url = "https://genius.p.rapidapi.com/artists/16775/songs"
+# async def main():
 #
-# headers = {
-#     'x-rapidapi-host': "genius.p.rapidapi.com",
-#     'x-rapidapi-key': "i5DswOlsXg4DeraCqZD0sQnxUK8-YHVIEvvF9ovjHPKAMN_RV29VWbEPjB6uzhUp"
-#     }
+#     async with aiohttp.ClientSession() as session:
+#             response = await session.get('https://www.sberbank.ru/ru/quotes/currencies')
+#             print("Status:", response.status)
+#             print("Content-type:", response.headers['content-type'])
 #
-# response = requests.request("GET", url, headers=headers)
+#             html = await response.text()
+#             print("Body:", html, "...")
 #
-# print(response.text)
+# loop = asyncio.get_event_loop()
+# loop.run_until_complete(main())
 
-from rauth import OAuth1Service
+# wake up bella skill
 
-genie = OAuth1Service(
-    consumer_key='fK8aBjnHannAuYJgwon1-4xudgR-Z69aJQlq_t7IOc3DPrYe596DJkRLKrQk1wZL',
-    consumer_secret='6-Ksfvz08jfOGf9esoQtFTRGVBOjgGdBnv09D8APSyErYFoOSFn4nhkEKXK1hxC7z6nrCuR9MeRBYiT-MCAnbg',
-    name='Genius',
-    request_token_url='api.genius.com',
+import time
+import datetime
 
-)
+def testing_wakeup():
+
+    current_time = datetime.datetime.now()
+    current_hour = current_time.time().hour
+    if current_hour == 1:
+        return 'Test passed'
+    elif 8 <= current_hour <=9:
+        return 'Wake Up, Bella'
+    else:
+        return None
