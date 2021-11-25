@@ -28,4 +28,4 @@ def testing_wakeup():
     elif 8 <= current_hour <=9:
         return 'Wake Up, Bella'
     else:
-        return None
+        return current_hour

@@ -29,6 +29,7 @@ class ScheduledHi(commands.Cog):
         dollar = get_dollar()
         far_c6 = far_cry()
         wakeup  = testing_wakeup()
+        print(wakeup)
         await self.user.send(f'Hello, anything new?\n Dollar costs {dollar} and  {far_c6}')
         if wakeup != None:
             await self.user.send(f'{wakeup}')
