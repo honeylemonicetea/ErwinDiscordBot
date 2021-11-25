@@ -18,10 +18,11 @@
 
 import time
 import datetime
-
+from pytz import  all_timezones, timezone
 def testing_wakeup():
-
-    current_time = datetime.datetime.now()
+    tz_is = timezone('Europe/Moscow')
+    print(tz_is)
+    current_time = datetime.datetime.now(tz=tz_is)
     current_hour = current_time.time().hour
     if current_hour == 1:
         return 'Test passed'
@@ -29,3 +30,5 @@ def testing_wakeup():
         return 'Wake Up, Bella'
     else:
         return current_hour
+
+
