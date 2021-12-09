@@ -21,14 +21,13 @@ import datetime
 from pytz import  all_timezones, timezone
 def testing_wakeup():
     tz_is = timezone('Europe/Moscow')
-    print(tz_is)
     current_time = datetime.datetime.now(tz=tz_is)
     current_hour = current_time.time().hour
-    if current_hour == 1:
-        return 'Test passed'
+    if 23 <= current_hour or 3 >= current_hour >= 1:
+        return 'It\'s time for you to have some rest, dear'
     elif 8 <= current_hour <=9:
-        return 'Wake Up, Bella'
+        return 'Wake Up, Bella!'
     else:
-        return current_hour
+        return None
 
 
