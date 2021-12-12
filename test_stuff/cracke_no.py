@@ -34,7 +34,7 @@ def get_dollar():
     return tag.get_text()
 
 def get_motivated():
-    with open('../resources/motivation.txt', encoding='utf-8') as file:
+    with open('resources/motivation.txt', encoding='utf-8') as file:
         data = file.read()
         quotes = data.split()
 
