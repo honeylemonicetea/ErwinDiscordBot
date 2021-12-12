@@ -30,8 +30,14 @@ class ScheduledHi(commands.Cog):
         far_c6 = far_cry()
         wakeup  = testing_wakeup()
         print(wakeup)
-        await self.user.send(f'Hello, anything new?\n Dollar costs {dollar} and  {far_c6}')
+        dol = dollar[0:4]
+        dol = float(dol)
+        if dol < 72:
+           await self.user.send(f'Dollar costs {dollar} and  {far_c6}')
         if wakeup != None:
             await self.user.send(f'{wakeup}')
+        if far_c6 == 'Far Cry 6 is probably cracked! Go check it out':
+             await self.user.send(f'{far_c6}')
+			 
 
 
