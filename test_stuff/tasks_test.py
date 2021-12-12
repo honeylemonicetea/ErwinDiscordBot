@@ -1,5 +1,5 @@
 from discord.ext import tasks, commands
-from .cracke_no import get_dollar, far_cry
+from .cracke_no import get_dollar, far_cry, get_motivated
 from .test1 import testing_wakeup
 
 class TestCog(commands.Cog):
@@ -23,7 +23,6 @@ class ScheduledHi(commands.Cog):
         self.user = user
         self.bot = bot
 
-
     @tasks.loop(hours=1)
     async def printer(self):
         dollar = get_dollar()
@@ -38,6 +37,13 @@ class ScheduledHi(commands.Cog):
             await self.user.send(f'{wakeup}')
         if far_c6 == 'Far Cry 6 is probably cracked! Go check it out':
              await self.user.send(f'{far_c6}')
+
+    @tasks.loop(hours=24)
+    async def daily_routine(self):
+        quote = get_motivated()
+        await self.user.send(quote)
+
+
 			 
 
 

@@ -28,6 +28,8 @@ async def on_ready():
     if user != None:
         task = ScheduledHi(bot=client, user=user)
         await task.printer()
+        await task.daily_routine()
+
 
 
 @client.event

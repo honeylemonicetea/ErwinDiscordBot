@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import random
+
 
 def far_cry():
 
@@ -30,4 +32,12 @@ def get_dollar():
     tag = soup2.find(class_="result__BigRate-sc-1bsijpp-1 iGrAod")
     # dollar rate
     return tag.get_text()
+
+def get_motivated():
+    with open('../resources/motivation.txt', encoding='utf-8') as file:
+        data = file.read()
+        quotes = data.split()
+
+    quote = random.choice(quotes)
+    return quote
 
