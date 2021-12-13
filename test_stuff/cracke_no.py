@@ -36,8 +36,8 @@ def get_dollar():
 def get_motivated():
     with open('resources/motivation.txt', encoding='utf-8') as file:
         data = file.read()
-        quotes = data.split()
-
+        quotes = data.split("\n")
+    # print(quotes)
     quote = random.choice(quotes)
     return quote
 
