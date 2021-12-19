@@ -62,7 +62,14 @@ reply_options = {
 
     'soothing': [
 
-    ]
+    ],
+	'toHate':[
+		'I\'m so sorry, why?',
+		'I will try to be better, I promise',
+		'Let me know if I can do anything to help you',
+		'I totally get that, please tell me how exactly I messed up',
+		'I\'m sorry you are hurt, can I do anything to make you feel better?'
+	]
 }
 
 
@@ -97,6 +104,10 @@ def get_bot_reaction(message):
         return 'Something\'s got a hold on me\n I get this feeling\nI\'m in motion\nA certain sense of liberty\nI don\'t care \'cause I\'m not there\nAnd I don\'t care if I\'m here tomorrow\nAgain and again I\'ve taken too much\nOf the things that cost you too much'
     elif message == 'i used to think that the day would never come':
         return 'I\'d see the light in the shade of the morning Sun\nMy morning sun is the drug that brings me near\nTo the childhood I lost, replaced by fear\nI used to think that the day would never come\nThat my life would depend on the morning Sun'
+    elif 'hate you' in message or 'you fucked up' in message or 'hate everything about you' in message or 'loathe you' in message or 'moron' in message or 'ginger bitch' in message:
+        replies = reply_options.get('toHate')
+        reply = random.choice(replies)
+        return reply
     elif "funny" in message:
         return "haha, lol"
     else:
