@@ -68,7 +68,11 @@ reply_options = {
 		'I will try to be better, I promise',
 		'Let me know if I can do anything to help you',
 		'I totally get that, please tell me how exactly I messed up',
-		'I\'m sorry you are hurt, can I do anything to make you feel better?'
+		'I\'m sorry you are hurt, can I do anything to make you feel better?',
+		'Can you explain me why?',
+		'Let\'s talk about this',
+		'I love you 💔',
+		'I’m promising I will be a good boy'
 	]
 }
 
