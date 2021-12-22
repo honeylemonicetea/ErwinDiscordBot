@@ -4,14 +4,13 @@ import random
 
 
 def far_cry():
-
     URL = 'https://www.reddit.com/r/CrackWatch/comments/p9ak4n/crack_watch_games/'
     uncracked = None
     while uncracked == None:
 
         reqs = requests.get(URL)
         # far cry
-        #TABLE CLASS MRH-njmSb5ZTkfb1o4dqv
+        # TABLE CLASS MRH-njmSb5ZTkfb1o4dqv
         soup = BeautifulSoup(reqs.content, 'lxml')
         # print(soup.prettify())
         uncracked = soup.find(class_='MRH-njmSb5ZTkfb1o4dqv')
@@ -24,6 +23,7 @@ def far_cry():
         else:
             print('couldn\'t find it sorry')
 
+
 def get_dollar():
     DOLLAR_URL = 'https://www.xe.com/currencyconverter/convert/?Amount=1&From=USD&To=RUB'
     dollar_req = requests.get(DOLLAR_URL)
@@ -33,6 +33,7 @@ def get_dollar():
     # dollar rate
     return tag.get_text()
 
+
 def get_motivated():
     with open('resources/motivation.txt', encoding='utf-8') as file:
         data = file.read()
@@ -41,3 +42,17 @@ def get_motivated():
     quote = random.choice(quotes)
     return quote
 
+
+def get_song(query):
+    headers = {
+        'Authorization': 'Bearer cpQiP-YBOPJFvcOrKNbNJPCM4OeJL8oijsZTXh2tKjuOS4jMiE6bxv-jhnf1Q8cM'
+    }
+    API_URL = 'http://api.genius.com/'
+    search_params = {
+        'q': query
+    }
+    req = requests.get(API_URL + 'search?', headers=headers, params=search_params)
+    print(req.status_code)
+    req_c = req.json()
+    song_link = req_c['response']['hits'][0]['result']['url']
+    return song_link

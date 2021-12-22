@@ -6,6 +6,7 @@ from general_replies import get_bot_reaction
 import random
 import asyncio
 from test_stuff.tasks_test import ScheduledHi
+from test_stuff.cracke_no import get_song
 
 intents = discord.Intents.all()
 
@@ -14,7 +15,7 @@ BELLA_ID = 660763476943306762
 
 
 # user = client.fetch_user(660763476943306762)
-# print(user)
+
 # user.send()
 
 # TEST FEATURE END
@@ -24,7 +25,6 @@ BELLA_ID = 660763476943306762
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
     user = client.get_user(BELLA_ID)
-    print(user)
     if user != None:
         task = ScheduledHi(bot=client, user=user)
         await task.printer()
@@ -35,8 +35,6 @@ async def on_ready():
 @client.event
 async def on_message(message):
     msg = message.content.lower()
-    # print(msg)
-
     if message.author == client.user:
         return
     if msg == 'hey baby' or msg == 'hi baby' or msg == 'hello honey' or msg == 'hey honey' or msg == 'hi honey':
@@ -47,13 +45,15 @@ async def on_message(message):
     elif msg.startswith('hello') or msg.startswith('hey') or msg.startswith(
             'hi'):
         await message.channel.send('Greetings stranger!')
+    elif msg.startswith('$lyrics'):
+        query = msg.split(' ')[1]
+        print(query)
+        pass
 
     # STORY TELLING FEATURE
     elif msg.startswith('#tell'):
         topic = msg.split(" ")[1]
-        print(topic)
         stories = get_stories(topic)
-        print(stories)
         if stories != 'Error' or stories is not None:
             toSend = random.choice(stories)
             await message.channel.send(toSend)
