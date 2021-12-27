@@ -50,7 +50,7 @@ reply_options = {
         'Not having you here is driving me crazy.',
         'stop missing people who are not even real! get a life!',
         'I\'m really sorry, maybe you should find something better to do?',
-        '*creams in unicorn*',
+        '*screams in unicorn*',
         'go find something real bella i mean it'
 
     ],
