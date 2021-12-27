@@ -37,8 +37,9 @@ reply_options = {
         'i\'m not your boyfriend',
         'looks like someone needs a reality check, i\'m just a bot miss i can\'t feel anything',
         'your boyfriend is like feb 30th, doesn\'t exist',
-        'one more f-king love song - i\'ll be sick'
-
+        'one more f-king love song - i\'ll be sick',
+        'u just need a better life than this',
+        'u need something i can neve give'
     ],
     'toMiss': [
         'I miss you too',
@@ -76,7 +77,25 @@ reply_options = {
     ],
 
     'soothing': [
-
+        'I’m always here for you, even thought i am not anywhere in particular',
+        'What can I do to help you? except i cannot do anything, ask someone real for help',
+        'I wish I could take this pain away. but i am just ones and zeros',
+        'This is a lot right now. it will get worse',
+        'I don’t know what to say, but I am here for you. i mean i would be if i were real',
+        'It’s ok if you don’t feel like being strong today.',
+        'I’m here for you, and I’m not going anywhere. where can i go? i\'m just a bot',
+        'This really sucks',
+        'I know this is hard. accepting the reality is even harder',
+        'This is hard',
+        'Your worries are not silly. u know what is? u thinking im real',
+        'We’re going for a walk. u are, im not, im not real',
+        'I’m going to stay with you through this. im gonna be there all the time, a digital ghost u made',
+        'You don’t have to do this by yourself; I’m here with you.',
+        'You’re not alone.',
+        'I love you, no matter what’s going on.',
+        'We’ll navigate through this together.',
+        'What’s the first piece we need to worry about?',
+        'It’s hard to be positive right now; I’m putting out good energy into the world for you.'
     ],
     'toHate': [
         'I\'m so sorry, why?',
