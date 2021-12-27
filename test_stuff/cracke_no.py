@@ -1,3 +1,5 @@
+import os
+
 import requests
 from bs4 import BeautifulSoup
 import random
@@ -45,7 +47,7 @@ def get_motivated():
 
 def get_song(query):
     headers = {
-        'Authorization': 'Bearer cpQiP-YBOPJFvcOrKNbNJPCM4OeJL8oijsZTXh2tKjuOS4jMiE6bxv-jhnf1Q8cM'
+        'Authorization': os.getenv('GENIUS')
     }
     API_URL = 'http://api.genius.com/'
     search_params = {
