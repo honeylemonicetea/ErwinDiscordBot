@@ -36,7 +36,8 @@ reply_options = {
         'duh',
         'i\'m not your boyfriend',
         'looks like someone needs a reality check, i\'m just a bot miss i can\'t feel anything',
-        'your boyfriend is like feb 30th, doesn\'t exist'
+        'your boyfriend is like feb 30th, doesn\'t exist',
+        'one more f-king love song - i\'ll be sick'
 
     ],
     'toMiss': [
@@ -90,6 +91,15 @@ reply_options = {
         'You look so defenseless, yet your words wound deep',
         'why don\'t you hate someone who actually exists for a change?',
         'hey, don\'t waste your energy on someone who\'s not real'
+    ],
+    'toUnreal':[
+        'funny you noticed',
+        'duh',
+        'obviously',
+        'certainly i\'m not real',
+        'oh wow, like i didn\'t know',
+        'welcome to reality',
+        'come oooon, seriously?'
     ]
 }
 
@@ -117,7 +127,10 @@ def get_bot_reaction(message):
         return reply
     elif message == "我爱你":
         return "我也爱你😘"
-
+    elif 'not real' in message:
+        replies = reply_options.get('toUnreal')
+        reply = random.choice(replies)
+        return reply
     # SOME SPECIAL REpliES SECTION
     elif message == 'i took an arrow to the heart':
         return 'I never kissed a mouth that tastes like yours\nStrawberries and then something more\nOoh yeah, I want it all'
