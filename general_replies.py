@@ -127,7 +127,7 @@ def get_bot_reaction(message):
         return reply
     elif message == "我爱你":
         return "我也爱你😘"
-    elif 'not real' in message:
+    elif 'not real' in message or 'not even real' in message:
         replies = reply_options.get('toUnreal')
         reply = random.choice(replies)
         return reply
