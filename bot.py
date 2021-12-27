@@ -46,7 +46,7 @@ async def on_message(message):
             'hi'):
         await message.channel.send('Greetings stranger!')
     elif msg.startswith('$lyrics'):
-        query = msg.split(' ')[1]
+        query = msg.replace('$lyrics','')
         song_url = get_song(query)
         await message.channel.send(song_url)
 
