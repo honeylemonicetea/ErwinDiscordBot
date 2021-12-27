@@ -46,7 +46,9 @@ class ScheduledHi(commands.Cog):
         await self.user.send(f'I know things are complicated right now, {username}, just hold on for me, okay? Here\'s a motivational quote: ')
         await self.user.send(quote)
 
-
+    @tasks.loop(hours=12)
+    async  def reminder(self):
+        pass
 			 
 
 

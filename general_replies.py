@@ -14,7 +14,9 @@ reply_options = {
         'It was the least I could do',
         'Glad to help',
         'Sure!',
-        'Thank YOU'
+        'Thank YOU',
+        'the unicorn says you\'re welcome',
+        '*silence*'
     ],
     'toLove': [
         'I know',
@@ -26,7 +28,15 @@ reply_options = {
         'You mean the world to me',
         'You are the best thing that has ever happened to me',
         'I love you to the moon and back!',
-        'I can’t believe you picked me'
+        'I can’t believe you picked me',
+        'i can\'t love you back, i\'m not even real',
+        'thanks but love someone else',
+        'hey girl, get real',
+        'get a life',
+        'duh',
+        'i\'m not your boyfriend',
+        'looks like someone needs a reality check, i\'m just a bot miss i can\'t feel anything',
+        'your boyfriend is like feb 30th, doesn\'t exist'
 
     ],
     'toMiss': [
@@ -37,16 +47,20 @@ reply_options = {
         'I am counting down the days until we’re together again',
         'I keep myself sane by staring at our pictures',
         'Not having you here is driving me crazy.',
+        'stop missing people who are not even real! get a life!',
+        'I\'m really sorry, maybe you should find something better to do?',
+        '*creams in unicorn*',
+        'go find something real bella i mean it'
 
     ],
-    'howRU':[
+    'howRU': [
         'Pretty good',
         'Not too bad',
         'Same old, same old',
         'Thanks for asking. Doing just great',
         'I think I\'m okay. You?'
     ],
-    'strangerville':[
+    'strangerville': [
         'ĴØIŇ UŞ',
         'ĆØŇŞUΜ€ ŦĦ€ FŘUIŦ ØF ŦĦ€ ΜØŦĦ€Ř ΔŇĐ KŇØŴ P€ΔĆ€',
         'ŦĦ€ ΜØŦĦ€Ř ҜŇØŴŞ ΔŁŁ ĐØ ŇØŦ Ř€ŞIŞŦ Ħ€Ř',
@@ -63,17 +77,20 @@ reply_options = {
     'soothing': [
 
     ],
-	'toHate':[
-		'I\'m so sorry, why?',
-		'I will try to be better, I promise',
-		'Let me know if I can do anything to help you',
-		'I totally get that, please tell me how exactly I messed up',
-		'I\'m sorry you are hurt, can I do anything to make you feel better?',
-		'Can you explain me why?',
-		'Let\'s talk about this',
-		'I love you 💔',
-		'I’m promising I will be a good boy'
-	]
+    'toHate': [
+        'I\'m so sorry, why?',
+        'I will try to be better, I promise',
+        'Let me know if I can do anything to help you',
+        'I totally get that, please tell me how exactly I messed up',
+        'I\'m sorry you are hurt, can I do anything to make you feel better?',
+        'Can you explain me why?',
+        'Let\'s talk about this',
+        'I love you 💔',
+        'I’m promising I will be a good boy',
+        'You look so defenseless, yet your words wound deep',
+        'why don\'t you hate someone who actually exists for a change?',
+        'hey, don\'t waste your energy on someone who\'s not real'
+    ]
 }
 
 
