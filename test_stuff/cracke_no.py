@@ -3,6 +3,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import random
+import pylast
 
 
 def far_cry():
@@ -58,3 +59,44 @@ def get_song(query):
     req_c = req.json()
     song_link = req_c['response']['hits'][0]['result']['url']
     return song_link
+
+
+
+# LAST FM
+API_KEY = ''
+API_SECRET = ''
+
+username = "BellaLeto"
+password_hash = pylast.md5('')
+
+network = pylast.LastFMNetwork(
+    api_key=API_KEY,
+    api_secret=API_SECRET,
+    username=username,
+    password_hash=password_hash,
+)
+user = network.get_user('BellaLeto')
+# Now you can use that object everywhere
+def get_artists_week():
+    arts = []
+    top_week = user.get_top_artists(limit=6, period=pylast.PERIOD_7DAYS)
+    for num, top in enumerate(top_week):
+        artist = top.item.name
+        arts.append(f"{num}. {artist}")
+    print(arts)
+
+
+def get_songs_week():
+    songs = []
+    songs_week = user.get_top_tracks(period=pylast.PERIOD_7DAYS, limit=6)
+    for num, top in enumerate(songs_week):
+        song = f"{num}. {top.item}. Times played: {top.weight}"
+        songs.append(song)
+    print(songs)
+# for i in range(50):
+#     time.sleep(60)
+#     arts = network.scrobble('Ed Sheeran','Stop the Rain', timestamp=time.time())
+#     print(arts)
+# Type help(pylast.LastFMNetwork) or help(pylast) in a Python interpreter
+# to get more help about anything and see examples of how it works
+
