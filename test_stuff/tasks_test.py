@@ -31,12 +31,10 @@ class ScheduledHi(commands.Cog):
         print(wakeup)
         dol = dollar[0:4]
         dol = float(dol)
-        if dol < 73:
-           await self.user.send(f'Dollar costs {dollar} and  {far_c6}')
+       
+        await self.user.send(f'Dollar costs {dollar} and  {far_c6}')
         if wakeup != None:
             await self.user.send(f'{wakeup}')
-        if far_c6 == 'Far Cry 6 is probably cracked! Go check it out':
-             await self.user.send(f'{far_c6}')
 
     @tasks.loop(hours=6)
     async def daily_routine(self):
