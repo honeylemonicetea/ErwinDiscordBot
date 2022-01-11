@@ -1,5 +1,5 @@
 from discord.ext import tasks, commands
-from .cracke_no import get_dollar, far_cry, get_motivated
+from .cracke_no import get_dollar, far_cry, get_motivated, get_songs_week, get_artists_week
 from .test1 import testing_wakeup
 
 class TestCog(commands.Cog):
@@ -38,11 +38,19 @@ class ScheduledHi(commands.Cog):
 
     @tasks.loop(hours=6)
     async def daily_routine(self):
+
+        get_songs_week()
+        get_artists_week()
+
         quote = get_motivated()
         print('quotes are functional')
         username = str(self.user).split(' ')[0]
         await self.user.send(f'I know things are complicated right now, {username}, just hold on for me, okay? Here\'s a motivational quote: ')
         await self.user.send(quote)
+
+
+    #     lfm test
+
 
     @tasks.loop(hours=12)
     async  def reminder(self):
