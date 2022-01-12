@@ -216,6 +216,17 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "pylast"
+version = "4.4.0"
+description = "A Python interface to Last.fm and Libre.fm"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+tests = ["flaky", "pytest", "pytest-cov", "pytest-random-order", "pyyaml"]
+
+[[package]]
 name = "pytz"
 version = "2021.3"
 description = "World timezone definitions, modern and historical"
@@ -307,7 +318,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "fbaddf62415e9361c04ac6cf366521f9a77086e31ca7015f5b88dbe757101e31"
+content-hash = "ed8486659118f77ea3cfb2839fc0dbd16c2f0c9ebdb1794ae90647ce49e68eb3"
 
 [metadata.files]
 aiohttp = [
@@ -614,6 +625,10 @@ multidict = [
     {file = "multidict-5.2.0-cp39-cp39-win32.whl", hash = "sha256:1c7976cd1c157fa7ba5456ae5d31ccdf1479680dc9b8d8aa28afabc370df42b8"},
     {file = "multidict-5.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:c9631c642e08b9fff1c6255487e62971d8b8e821808ddd013d8ac058087591ac"},
     {file = "multidict-5.2.0.tar.gz", hash = "sha256:0dd1c93edb444b33ba2274b66f63def8a327d607c6c790772f448a53b6ea59ce"},
+]
+pylast = [
+    {file = "pylast-4.4.0-py3-none-any.whl", hash = "sha256:0b525a98b2b7b4dfb62ec6a30008b0e9bd10a53ef6cc75690132dab15823b33c"},
+    {file = "pylast-4.4.0.tar.gz", hash = "sha256:da6ebea506019af571941c35c8b4802abde4679592d52d13675650dc447e6c29"},
 ]
 pytz = [
     {file = "pytz-2021.3-py2.py3-none-any.whl", hash = "sha256:3672058bc3453457b622aab7a1c3bfd5ab0bdae451512f6cf25f64ed37f5b87c"},

@@ -1,3 +1,4 @@
+
 import os
 
 import requests
@@ -63,11 +64,11 @@ def get_song(query):
 
 
 # LAST FM
-API_KEY = ''
-API_SECRET = ''
-
+API_KEY = os.environ['API_KEY']
+API_SECRET = os.environ['SHARED_SECRET']
 username = "BellaLeto"
-password_hash = pylast.md5('')
+password_hash = pylast.md5( os.environ['LAST_P'])
+
 
 network = pylast.LastFMNetwork(
     api_key=API_KEY,
@@ -82,17 +83,17 @@ def get_artists_week():
     top_week = user.get_top_artists(limit=6, period=pylast.PERIOD_7DAYS)
     for num, top in enumerate(top_week):
         artist = top.item.name
-        arts.append(f"{num}. {artist}")
-    print(arts)
+        arts.append(f"{num+1}. {artist}")
+    return "\n".join(arts)
 
 
 def get_songs_week():
     songs = []
     songs_week = user.get_top_tracks(period=pylast.PERIOD_7DAYS, limit=6)
     for num, top in enumerate(songs_week):
-        song = f"{num}. {top.item}. Times played: {top.weight}"
+        song = f"{num+1}. {top.item}. Times played: {top.weight}"
         songs.append(song)
-    print(songs)
+    return "\n".join(songs)
 # for i in range(50):
 #     time.sleep(60)
 #     arts = network.scrobble('Ed Sheeran','Stop the Rain', timestamp=time.time())

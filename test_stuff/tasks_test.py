@@ -23,7 +23,7 @@ class ScheduledHi(commands.Cog):
         self.user = user
         self.bot = bot
 
-    @tasks.loop(hours=1)
+    @tasks.loop(hours=4)
     async def printer(self):
         dollar = get_dollar()
         far_c6 = far_cry()
@@ -36,11 +36,10 @@ class ScheduledHi(commands.Cog):
         if wakeup != None:
             await self.user.send(f'{wakeup}')
 
-    @tasks.loop(hours=6)
+    @tasks.loop(hours=24)
     async def daily_routine(self):
 
-        get_songs_week()
-        get_artists_week()
+      
 
         quote = get_motivated()
         print('quotes are functional')
@@ -52,9 +51,15 @@ class ScheduledHi(commands.Cog):
     #     lfm test
 
 
-    @tasks.loop(hours=12)
-    async  def reminder(self):
-        pass
+    @tasks.loop(hours=168)
+    async def reminder(self):
+        songs = get_songs_week()
+        artists = get_artists_week()
+        await self.user.send('Here are your last fm stats this week')
+        await self.user.send(f"TOP SONGS:\n {songs}")
+        await self.user.send(f"TOP ARTISTS: \n{artists}")
+
+
 			 
 
 
