@@ -9,6 +9,8 @@ from test_stuff.tasks_test import ScheduledHi
 from test_stuff.cracke_no import get_song
 from discord_slash import SlashCommand
 
+
+
 intents = discord.Intents.all()
 
 client = discord.Client(intents=intents)
@@ -23,6 +25,14 @@ async def _ping(ctx):
     await ctx.send("Pong!")
 
 # SLASH END
+@slash.slash(name='lyrics', guild_ids=guild_ids)
+async def _lyrics(ctx):
+    print(ctx)
+    # query = msg.replace('$lyrics','')
+    # song_url = get_song(query)
+    # await message.channel.send(song_url)
+    await ctx.send('hey babe')
+
 
 @client.event
 async def on_ready():
@@ -49,10 +59,7 @@ async def on_message(message):
     elif msg.startswith('hello') or msg.startswith('hey') or msg.startswith(
             'hi'):
         await message.channel.send('Greetings stranger!')
-    elif msg.startswith('$lyrics'):
-        query = msg.replace('$lyrics','')
-        song_url = get_song(query)
-        await message.channel.send(song_url)
+
 
     # STORY TELLING FEATURE
     elif msg.startswith('#tell'):
