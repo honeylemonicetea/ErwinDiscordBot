@@ -7,6 +7,7 @@ import random
 import asyncio
 from test_stuff.tasks_test import ScheduledHi
 from test_stuff.cracke_no import get_song
+from discord_slash import SlashCommand
 
 intents = discord.Intents.all()
 
@@ -14,12 +15,14 @@ client = discord.Client(intents=intents)
 BELLA_ID = 660763476943306762
 
 
-# user = client.fetch_user(660763476943306762)
+# SLASH COMMANDS START
+slash = SlashCommand(client, sync_commands=True) # Declares slash commands through the client.
+guild_ids = [895769591190548560] # Put your server IDs in this array.
+@slash.slash(name="ping", guild_ids=guild_ids)
+async def _ping(ctx):
+    await ctx.send("Pong!")
 
-# user.send()
-
-# TEST FEATURE END
-
+# SLASH END
 
 @client.event
 async def on_ready():
