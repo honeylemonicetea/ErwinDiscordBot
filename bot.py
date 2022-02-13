@@ -7,9 +7,8 @@ import random
 import asyncio
 from test_stuff.tasks_test import ScheduledHi
 from test_stuff.cracke_no import get_song
-from discord_slash import SlashCommand
-
-
+from discord_slash import SlashCommand, SlashContext
+from discord import Client, Intents, Embed
 
 intents = discord.Intents.all()
 
@@ -27,12 +26,17 @@ async def _ping(ctx):
 # SLASH END
 @slash.slash(name='lyrics', guild_ids=guild_ids)
 async def _lyrics(ctx):
-    print(ctx)
+    print(ctx.subcommand_name )
+    print(ctx.subcommand_group)
+
     # query = msg.replace('$lyrics','')
     # song_url = get_song(query)
     # await message.channel.send(song_url)
     await ctx.send('hey babe')
-
+@slash.slash(name="test", guild_ids=guild_ids)
+async def test(ctx: SlashContext):
+    embed = Embed(title="Embed Test")
+    await ctx.send(embed=embed)
 
 @client.event
 async def on_ready():
@@ -60,7 +64,10 @@ async def on_message(message):
             'hi'):
         await message.channel.send('Greetings stranger!')
 
-
+	elif msg.startswith('$lyrics'):
+        query = msg.replace('$lyrics','')
+        song_url = get_song(query)
+		await message.channel.send(song_url)
     # STORY TELLING FEATURE
     elif msg.startswith('#tell'):
         topic = msg.split(" ")[1]

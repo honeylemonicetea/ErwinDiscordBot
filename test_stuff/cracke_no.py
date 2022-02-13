@@ -56,7 +56,6 @@ def get_song(query):
         'q': query
     }
     req = requests.get(API_URL + 'search?', headers=headers, params=search_params)
-    print(req.status_code)
     req_c = req.json()
     song_link = req_c['response']['hits'][0]['result']['url']
     return song_link

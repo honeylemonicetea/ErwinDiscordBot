@@ -42,7 +42,6 @@ class ScheduledHi(commands.Cog):
       
 
         quote = get_motivated()
-        print('quotes are functional')
         username = str(self.user).split(' ')[0]
         await self.user.send(f'I know things are complicated right now, {username}, just hold on for me, okay? Here\'s a motivational quote: ')
         await self.user.send(quote)

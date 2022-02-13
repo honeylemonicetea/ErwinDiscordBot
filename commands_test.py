@@ -12,7 +12,6 @@ BELLA_ID = 660763476943306762
 @client.event
 async def on_ready():
     user = client.get_user(BELLA_ID)
-    print(user)
     task = ScheduledHi(bot=client, user=user)
     await task.printer()
 
