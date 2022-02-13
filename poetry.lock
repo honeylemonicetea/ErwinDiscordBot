@@ -123,6 +123,34 @@ python-versions = "*"
 "discord.py" = ">=1.7.3"
 
 [[package]]
+name = "discord-ext-slash"
+version = "0.9.2"
+description = "Support slash commands with discord.py."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+"discord.py" = ">=1.5,<1.8"
+
+[[package]]
+name = "discord-py-slash-command"
+version = "3.0.3"
+description = "A slash command handler for discord.py."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+aiohttp = "*"
+"discord.py" = "*"
+
+[package.extras]
+dev = ["black", "flake8", "isort", "sphinx", "karma-sphinx-theme"]
+lint = ["black", "flake8", "isort", "sphinx", "karma-sphinx-theme"]
+readthedocs = ["sphinx", "karma-sphinx-theme"]
+
+[[package]]
 name = "discord.py"
 version = "1.7.3"
 description = "A Python wrapper for the Discord API"
@@ -318,7 +346,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "ed8486659118f77ea3cfb2839fc0dbd16c2f0c9ebdb1794ae90647ce49e68eb3"
+content-hash = "c5943cdfcea15850f7920ad84b7f278f1bfb9b2d1e17b2872fe0819641f0432b"
 
 [metadata.files]
 aiohttp = [
@@ -398,6 +426,14 @@ colorama = [
 discord = [
     {file = "discord-1.7.3-py3-none-any.whl", hash = "sha256:248d728356e149c818a81b94659047a19305ea1623d4810bbb342f6b7df55f36"},
     {file = "discord-1.7.3.tar.gz", hash = "sha256:846dd3d66888c2e0a8bd9120d8778a0fe088c003a7f6451668497f14e322a304"},
+]
+discord-ext-slash = [
+    {file = "discord-ext-slash-0.9.2.tar.gz", hash = "sha256:c692633ef8c6ac56cd81388822aabe5b3f36f73fa1a4e784e14f03ca9671ffab"},
+    {file = "discord_ext_slash-0.9.2-py3-none-any.whl", hash = "sha256:cfb4b7be91c8bfce6566e89c9c47099d06b5ce8fe7f00ddc74e6b0bd4d3dcbc1"},
+]
+discord-py-slash-command = [
+    {file = "discord-py-slash-command-3.0.3.tar.gz", hash = "sha256:a9a220492e1a32fc66a20aebe49ccb6d6308a504d79627096f4e9443fdd8978e"},
+    {file = "discord_py_slash_command-3.0.3-py3-none-any.whl", hash = "sha256:e6a83a0bd656ad96859483450ade1a4e760b3351e612a9639fd6acf14abe1676"},
 ]
 "discord.py" = [
     {file = "discord.py-1.7.3-py3-none-any.whl", hash = "sha256:c6f64db136de0e18e090f6752ea68bdd4ab0a61b82dfe7acecefa22d6477bb0c"},
