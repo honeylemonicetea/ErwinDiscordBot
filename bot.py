@@ -64,10 +64,10 @@ async def on_message(message):
             'hi'):
         await message.channel.send('Greetings stranger!')
 
-	elif msg.startswith('$lyrics'):
+    elif msg.startswith('$lyrics'):
         query = msg.replace('$lyrics','')
         song_url = get_song(query)
-		await message.channel.send(song_url)
+        await message.channel.send(song_url)
     # STORY TELLING FEATURE
     elif msg.startswith('#tell'):
         topic = msg.split(" ")[1]
