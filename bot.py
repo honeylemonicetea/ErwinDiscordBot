@@ -64,8 +64,8 @@ async def on_message(message):
             'hi'):
         await message.channel.send('Greetings stranger!')
 
-    elif msg.startswith('$lyrics'):
-        query = msg.replace('$lyrics','')
+    elif msg.startswith('$l'):
+        query = msg.replace('$l','')
         song_url = get_song(query)
         await message.channel.send(song_url)
     # STORY TELLING FEATURE
