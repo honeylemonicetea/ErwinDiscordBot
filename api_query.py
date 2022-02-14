@@ -3,6 +3,8 @@ import json
 
 
 def get_stories(topic):
+    if topic == 'conspiracy':
+        topic = 'conspiracy_theories'
     r = requests.get('https://gentle-basin-15677.herokuapp.com/stories')
     reply_list = r.text
     raw_text = json.loads(reply_list)

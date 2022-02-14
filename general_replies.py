@@ -110,7 +110,7 @@ reply_options = {
         'You look so defenseless, yet your words wound deep',
         'why don\'t you hate someone who actually exists for a change?',
         'hey, don\'t waste your energy on someone who\'s not real',
-		'i\m not some boy that you can sway'
+		'i\'m not some boy that you can sway'
     ],
     'toUnreal':[
         'funny you noticed',
