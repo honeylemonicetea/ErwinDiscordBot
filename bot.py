@@ -17,26 +17,26 @@ BELLA_ID = 660763476943306762
 
 
 # SLASH COMMANDS START
-slash = SlashCommand(client, sync_commands=True) # Declares slash commands through the client.
-guild_ids = [895769591190548560] # Put your server IDs in this array.
-@slash.slash(name="ping", guild_ids=guild_ids)
-async def _ping(ctx):
-    await ctx.send("Pong!")
+# slash = SlashCommand(client, sync_commands=True) # Declares slash commands through the client.
+# guild_ids = [895769591190548560] # Put your server IDs in this array.
+# @slash.slash(name="ping", guild_ids=guild_ids)
+# async def _ping(ctx):
+#     await ctx.send("Pong!")
+# @slash.slash(name='lyrics', guild_ids=guild_ids)
+# async def _lyrics(ctx):
+#     print(ctx.subcommand_name )
+#     print(ctx.subcommand_group)
+#
+#     # query = msg.replace('$lyrics','')
+#     # song_url = get_song(query)
+#     # await message.channel.send(song_url)
+#     await ctx.send('hey babe')
+# @slash.slash(name="test", guild_ids=guild_ids)
+# async def test(ctx: SlashContext):
+#     embed = Embed(title="Embed Test")
+#     await ctx.send(embed=embed)
 
 # SLASH END
-@slash.slash(name='lyrics', guild_ids=guild_ids)
-async def _lyrics(ctx):
-    print(ctx.subcommand_name )
-    print(ctx.subcommand_group)
-
-    # query = msg.replace('$lyrics','')
-    # song_url = get_song(query)
-    # await message.channel.send(song_url)
-    await ctx.send('hey babe')
-@slash.slash(name="test", guild_ids=guild_ids)
-async def test(ctx: SlashContext):
-    embed = Embed(title="Embed Test")
-    await ctx.send(embed=embed)
 
 @client.event
 async def on_ready():
