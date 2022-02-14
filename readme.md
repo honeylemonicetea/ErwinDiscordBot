@@ -1,4 +1,4 @@
-# **Erwin Discord Bot 👾**
+# **Erwin Discord Bot 👾👽🌵**
 
 ##### features
 <ul>
