@@ -78,8 +78,8 @@ async def on_message(message):
         else:
             await message.channel.send('Nothing here')
             # HANDLING OTHER REPLIES
-    elif msg.startswith('image'):
-        await message.channel.send(file=discord.File('images/imageT.jpg'))
+    # elif msg.startswith('image'):
+    #     await message.channel.send(file=discord.File('images/imageT.jpg'))
     else:
         reply = get_bot_reaction(msg)
         await asyncio.sleep(2)
