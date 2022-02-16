@@ -1,4 +1,5 @@
 import random
+from mental_health_replies import check_mh
 
 reply_options = {
     'toGratitude': [
@@ -125,6 +126,10 @@ reply_options = {
 
 
 def get_bot_reaction(message):
+    # check mh first, else check others
+    get_help = check_mh(message)
+    if get_help:
+        return get_help
     if "thank" in message:
         replies = reply_options.get('toGratitude')
         reply = random.choice(replies)
@@ -164,5 +169,7 @@ def get_bot_reaction(message):
         return reply
     elif "funny" in message:
         return "haha, lol"
+    elif 'what can you do' in message or 'your skills' in message or "can u do" in message:
+        return "Hey, here's what I can do rn:\n Send you some info about dollar's cost in rubles and tell you whether FC6 is cracked or not every 4 hours \n Tell you to wake up/go to bed\n Send you motivational quotes every 24 hours \n Send you your last.fm stats \n Answer to greetings \nLyrics Search $l 'your query' \nTell a random conspiracy theory #t conspiracy \n React to some words"
     else:
         return 'Please, be patient. Doing the best I can to understand what you want. I\'m not perfect yet'
