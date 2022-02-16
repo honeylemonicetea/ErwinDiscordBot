@@ -6,7 +6,7 @@ phrases = [
         'bad', 'sad', 'helpless', 'hopeless', 'aching', 'lost', 'worthless', 'useless', 'stupid', 'stuck', 'untethered', 'adrift',
         'hurting', 'alone', 'afraid', 'unsure', 'insecure', 'despair', 'tired', 'exhausted', 'knackered', 'no one cares',
         'kill myself', 'suicide', 'jump off','no reason to live', 'lonely', 'i have no one',
-        'die alone']
+        'die alone', 'want to die', 'wanna die', 'sick and tired']
 
 
 responses = [
