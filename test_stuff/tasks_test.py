@@ -1,6 +1,7 @@
 from discord.ext import tasks, commands
 from .cracke_no import get_dollar, far_cry, get_motivated, get_songs_week, get_artists_week
 from .test1 import testing_wakeup
+from .selenium_scaper import get_song_num
 
 class TestCog(commands.Cog):
     def __init__(self, bot):
@@ -31,8 +32,8 @@ class ScheduledHi(commands.Cog):
         print(wakeup)
         dol = dollar[0:4]
         dol = float(dol)
-       
-        await self.user.send(f'Dollar costs {dollar} and  {far_c6}')
+        davey_stalking = get_song_num()
+        await self.user.send(f'Dollar costs {dollar} and  {far_c6}. Stalking Wavy Davey: {davey_stalking} ')
         if wakeup != None:
             await self.user.send(f'{wakeup}')
 
@@ -50,7 +51,7 @@ class ScheduledHi(commands.Cog):
     #     lfm test
 
 
-    @tasks.loop(hours=168)
+    @tasks.loop(hours=24)
     async def reminder(self):
         songs = get_songs_week()
         artists = get_artists_week()
