@@ -81,7 +81,7 @@ user = network.get_user('BellaLeto')
 # Now you can use that object everywhere
 def get_artists_week(): #set to overall
     arts = []
-    top_week = user.get_top_artists(limit=6, period=pylast.PERIOD_OVERALL)
+    top_week = user.get_top_artists(limit=8, period=pylast.PERIOD_OVERALL)
     for num, top in enumerate(top_week):
         artist = top.item.name
         arts.append(f"{num+1}. {artist}. Times played: {top.weight}")
@@ -90,7 +90,7 @@ def get_artists_week(): #set to overall
 
 def get_songs_week():
     songs = []
-    songs_week = user.get_top_tracks(period=pylast.PERIOD_OVERALL, limit=6)
+    songs_week = user.get_top_tracks(period=pylast.PERIOD_OVERALL, limit=8)
     for num, top in enumerate(songs_week):
         song = f"{num+1}. {top.item}. Times played: {top.weight}"
         songs.append(song)
