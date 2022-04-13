@@ -30,22 +30,19 @@ class ScheduledHi(commands.Cog):
         far_c6 = far_cry()
         wakeup  = testing_wakeup()
         print(wakeup)
-        dol = dollar[0:4]
+        dol = dollar[0:3]
         dol = float(dol)
         davey_stalking = get_song_num()
-        await self.user.send(f'Dollar costs {dollar} and  {far_c6}. Stalking Wavy Davey: {davey_stalking} ')
+        await self.user.send(f' Stalking Wavey Davey: {davey_stalking} Dollar costs {dollar} and  {far_c6}.')
         if wakeup != None:
             await self.user.send(f'{wakeup}')
 
-    @tasks.loop(hours=24)
-    async def daily_routine(self):
-
-      
-
-        quote = get_motivated()
-        username = str(self.user).split(' ')[0]
-        await self.user.send(f'I know things are complicated right now, {username}, just hold on for me, okay? Here\'s a motivational quote: ')
-        await self.user.send(quote)
+    # @tasks.loop(hours=24)
+    # async def daily_routine(self):
+    #     quote = get_motivated()
+    #     username = str(self.user).split(' ')[0]
+    #     await self.user.send(f'I know things are complicated right now, {username}, just hold on for me, okay? Here\'s a motivational quote: ')
+    #     await self.user.send(quote)
 
 
     #     lfm test
@@ -55,7 +52,7 @@ class ScheduledHi(commands.Cog):
     async def reminder(self):
         songs = get_songs_week()
         artists = get_artists_week()
-        await self.user.send('Here are your last fm stats this week')
+        await self.user.send('LAST FM OVERALL')
         await self.user.send(f"TOP SONGS:\n {songs}")
         await self.user.send(f"TOP ARTISTS: \n{artists}")
 

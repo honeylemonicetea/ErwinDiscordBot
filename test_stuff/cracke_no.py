@@ -10,10 +10,10 @@ import pylast
 # LAST FM
 
 
-# API_KEY = os.environ['API_KEY']
-# API_SECRET = os.environ['SHARED_SECRET']
+API_KEY = os.environ['API_KEY']
+API_SECRET = os.environ['SHARED_SECRET']
 username = "BellaLeto"
-# password_hash = pylast.md5( os.environ['LAST_P'])
+password_hash = pylast.md5( os.environ['LAST_P'])
 DAVE_SONGVIEW = 'https://repertoire.bmi.com/Search/Catalog?num=F%252btAzu6fjIiTIo1SFOajWQ%253d%253d&cae=evPJVZlCDO5H8s2jCKN5rQ%253d%253d&partType=WriterList&search=%7B%22Main_Search_Text%22%3A%22afi%22%2C%22Sub_Search_Text%22%3A%22%22%2C%22Main_Search%22%3A%22Catalog%22%2C%22Sub_Search%22%3Anull%2C%22Search_Type%22%3A%22all%22%2C%22View_Count%22%3A100%2C%22Page_Number%22%3A1%2C%22Part_Type%22%3A%22PerformerList%22%2C%22Part_Id%22%3A%22HvNjLwM%252bQ%252bvky%252bX4HQW1bQ%253d%253d%22%2C%22Part_Id_Sub%22%3Anull%2C%22Part_Name%22%3Anull%2C%22Part_Cae%22%3Anull%2C%22Original_Search%22%3A%22Performer%22%2C%22DisclaimerViewed%22%3Anull%7D&resetPageNumber=True&partIdSub=YO0HedHMatLb45JzS23DVw%253d%253d#'
 
 
@@ -71,26 +71,26 @@ def get_song(query):
     return song_link
 
 
-# network = pylast.LastFMNetwork(
-#     api_key=API_KEY,
-#     api_secret=API_SECRET,
-#     username=username,
-#     password_hash=password_hash,
-# )
-# user = network.get_user('BellaLeto')
+network = pylast.LastFMNetwork(
+    api_key=API_KEY,
+    api_secret=API_SECRET,
+    username=username,
+    password_hash=password_hash,
+)
+user = network.get_user('BellaLeto')
 # Now you can use that object everywhere
-def get_artists_week():
+def get_artists_week(): #set to overall
     arts = []
-    top_week = user.get_top_artists(limit=6, period=pylast.PERIOD_7DAYS)
+    top_week = user.get_top_artists(limit=6, period=pylast.PERIOD_OVERALL)
     for num, top in enumerate(top_week):
         artist = top.item.name
-        arts.append(f"{num+1}. {artist}")
+        arts.append(f"{num+1}. {artist}. Times played: {top.weight}")
     return "\n".join(arts)
 
 
 def get_songs_week():
     songs = []
-    songs_week = user.get_top_tracks(period=pylast.PERIOD_7DAYS, limit=6)
+    songs_week = user.get_top_tracks(period=pylast.PERIOD_OVERALL, limit=6)
     for num, top in enumerate(songs_week):
         song = f"{num+1}. {top.item}. Times played: {top.weight}"
         songs.append(song)
@@ -102,9 +102,3 @@ def get_songs_week():
 # Type help(pylast.LastFMNetwork) or help(pylast) in a Python interpreter
 # to get more help about anything and see examples of how it works
 
-def get_song_update():
-    req = requests.get(DAVE_SONGVIEW, allow_redirects=False)
-    print(req.content)
-    print(req.url)
-
-get_song_update()
